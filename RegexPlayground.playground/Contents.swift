@@ -17,7 +17,10 @@ public extension String {
 
 var lines = [String]()
 
-public func testRegex(_ pattern: String, printMatches: Bool = true) {
+// Toggle this printMaches variable to suit your preferences!
+// It will print out capture group matches if set to True
+
+public func test(regex pattern: String, printMatches: Bool = false) {
     let regex = try! NSRegularExpression(pattern: pattern, options: [])
 
     print("Testing: \"\(pattern)\"")
@@ -43,9 +46,10 @@ public func testRegex(_ pattern: String, printMatches: Bool = true) {
     print("\n")
 }
 
+// Add lines to test here
 lines = [
-    "githawk/githawkapp#2398"
+    ""
 ]
 
-testRegex("(^|\\s|[^a-zA-Z])((\\w+)/(\\w+))?#([0-9]+)(?![a-zA-Z0-9])")
-
+// Add regex here
+test(regex: "")
