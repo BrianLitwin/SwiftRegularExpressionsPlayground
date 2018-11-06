@@ -1,7 +1,7 @@
 ## Swift Regular Expressions Playground
 A playground for testing regular expressions in Swift!
 
-Code used and inspired by [this NSHipster article](https://nshipster.com/nsregularexpression/). See the article for more details about the implementation.
+Code used and inspired by [this NSHipster article](https://nshipster.com/nsregularexpression/). See the article for more about the implementation details.
 
 Drop in a few lines and test your regular expression in `test(regex:)`:
 
