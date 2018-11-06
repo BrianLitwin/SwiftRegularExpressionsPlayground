@@ -30,7 +30,7 @@ Found match: "(#2398)"
 */
 ```
 
-If you'd like to see detail on the capture groups, toggle the paremeter printMatches to true:
+If you'd like to see detail on the capture groups, toggle the paremeter `printMatches` to true:
 
 ```Swift
 lines = [
