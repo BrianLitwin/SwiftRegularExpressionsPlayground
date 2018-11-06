@@ -1,4 +1,5 @@
 import Foundation
+
 public extension String {
     /// An updated implementation of: https://nshipster.com/nsregularexpression/
     
@@ -17,23 +18,23 @@ public extension String {
 
 var lines = [String]()
 
-// Toggle this printMaches variable to suit your preferences!
-// It will print out capture group matches if set to True
+// Toggle printMaches variable to suit your preference ->
+// Prints capture group matches if set to True
 
 public func test(regex pattern: String, printMatches: Bool = false) {
-    let regex = try! NSRegularExpression(pattern: pattern, options: [])
-
+    guard let regex = try? NSRegularExpression(pattern: pattern) else {
+        fatalError("Could not convert \"\(pattern)\" to regular expression")
+    }
     print("Testing: \"\(pattern)\"")
     
-    for line in lines {
-        let matches = regex.matches(in: line, options: [], range: line.nsrange)
+    lines.forEach { line in
+        let matches = regex.matches(in: line, range: line.nsrange)
         if !matches.isEmpty {
             print("Found match: \"\(line)\"")
             
             if printMatches {
-                for match in matches {
-                    let numberRanges = match.numberOfRanges
-                    for i in 0..<numberRanges {
+                matches.forEach { match in
+                    for i in 0..<match.numberOfRanges {
                         if let m = line.substring(with: match.range(at: i)) {
                             print("match[\(i)]: " + m)
                         }
@@ -46,7 +47,7 @@ public func test(regex pattern: String, printMatches: Bool = false) {
     print("\n")
 }
 
-// Add lines to test here
+// Add lines to test here 
 lines = [
     ""
 ]
