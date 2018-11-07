@@ -18,7 +18,7 @@ public extension String {
 
 var lines = [String]()
 
-// Toggle printMaches variable to suit your preference ->
+// Toggle printMaches parameter to suit your preference ->
 // Prints capture group matches if set to True
 
 public func test(regex pattern: String, printMatches: Bool = false) {
